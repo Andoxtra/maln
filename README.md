@@ -3,11 +3,11 @@
 ## Getting the Project from GitLab
 To clone the project repository from GitLab, run the following command:
 ```
-git clone git@gitlab.cds.testo:**YOURUSERNAME**/wara_hausmesse_2024.git
+git clone git@github.com:Andoxtra/maln.git
 ```
 Then, switch to the development branch:
 ```
-git checkout tomDev
+git checkout master
 ```
 
 ### If No Files Appear (Other Than README.md)
