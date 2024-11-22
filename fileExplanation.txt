@@ -1,0 +1,38 @@
+main.py
+The main entry point of the project. This is where the game is initialized and started.
+
+RunInThreads.py
+This module enables the parallel execution of the game logic in a separate thread to ensure that the display and the game logic run independently and do not interfere with each other.
+
+GUITkinter.py and GuiPhysical.py
+These modules are responsible for the graphical representation of the game:
+• GUITkinter.py: Implements the visual user interface of the game board using the Tkinter framework.
+• GuiPhysical.py: Uses physical LEDs to display the game on a real game board.
+
+Game.py
+This module contains the central game logic, including the initialization of the number of players, the turn order, and other core game functions.
+
+GameField.py
+The module defines the game board and manages the game pieces located on it.
+
+Player.py
+The Player class manages each player's game pieces, input and output mechanisms, as well as the dice rolling process.
+
+Controller.py
+This module controls the input and output units of the game and ensures that all connected devices are operated correctly.
+
+PortExpander.py
+This module simulates the port expander used in the actual circuit for the physical buttons to logically structure the program flow and ensure smooth operation.
+
+Keyboard.py and PhysicalButton.py
+These modules are responsible for player inputs:
+• Keyboard.py: Allows player input through the Python console.
+• PhysicalButton.py: Accepts player inputs via physical buttons.
+
+Console.py and Display.py
+These modules output information about the game progress:
+• Console.py: Outputs rolled dice values, selected game pieces, and other information in the Python console.
+• Display.py: Graphically displays this information on a 128x64 LCD display.
+
+Figure.py
+The Figure class manages the status and position of the game pieces.

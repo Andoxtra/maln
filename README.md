@@ -56,4 +56,5 @@ For better multitasking, use **Windows + Arrow Keys** to quickly align the conso
 
 ## Important Notes
 - Please be aware that the Physical or LCD Display configuration options cannot be used unless you are operating with the playboard itself. Make sure to choose the appropriate settings based on your setup. 
+- For explanation of the important files in the project read fileExplanation.txt
 
