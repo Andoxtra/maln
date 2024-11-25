@@ -5,10 +5,6 @@ To clone the project repository from GitLab, run the following command:
 ```
 git clone git@github.com:Andoxtra/maln.git
 ```
-Then, switch to the development branch:
-```
-git checkout master
-```
 
 ### If No Files Appear (Other Than README.md)
 If you only see the README.md file and no other project files, please use the following command to fetch the latest updates:
