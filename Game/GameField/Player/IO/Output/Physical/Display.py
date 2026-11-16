@@ -2,7 +2,7 @@ import time
 
 from PIL import ImageDraw
 
-from .helper.displayHelper import *
+from helper.displayHelper import *
 
 
 class Display:

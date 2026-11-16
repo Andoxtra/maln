@@ -82,6 +82,7 @@ class Game:
         for player in self.get_all_players():
             if player.has_won:
                 return player.color
+        return None
 
     def select_number_of_players(self):
         input_of_first_player = self.get_input_of_first_player()
@@ -134,7 +135,7 @@ class Game:
                     figures_able_to_move = current_player.is_figure_able_to_move()
                     if not is_list_empty(figures_able_to_move):
                         choosen_figure = self.game_field.choose_figure(figures_able_to_move, current_player)
-                        self.game_field.move_choosen_figure(current_player, choosen_figure)
+                        self.game_field.move_chosen_figure(current_player, choosen_figure)
                         current_player.controller.output.clear_dice()
                         current_player.controller.output.clear_selected_figure()
                         current_player.controller.output.show_figure_status(

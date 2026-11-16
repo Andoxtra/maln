@@ -1,4 +1,4 @@
-from .Player.Player import Player
+from Player.Player import Player
 from helper import get_start_field_by_color
 
 
@@ -39,6 +39,7 @@ def get_field_to_land(player, figure):
         return field_to_land
     elif figure.status == 2:
         return figure.position + last_roll
+    return None
 
 
 class GameField:
@@ -148,6 +149,7 @@ class GameField:
             for figur in player.figure_list:
                 if figur.position == position:
                     return [player, figur]
+        return None
 
     def get_figure_by_position_and_throw_out(self, position):
         foreign_player_and_figure = self.get_player_and_figure_by_position(position)
@@ -157,43 +159,43 @@ class GameField:
         foreign_figure.throw_figure_out(b_field_of_foreign_figure)
         foreign_player.controller.output.show_figure_status(foreign_figure.index_of_figure, foreign_figure.status)
 
-    def move_choosen_figure(self, current_player, choosen_figure):
+    def move_chosen_figure(self, current_player, chosen_figure):
         last_roll = current_player.dice.get_rolled_number()
-        position = choosen_figure.position
+        position = chosen_figure.position
         color = current_player.color
         start_field = get_start_field_by_color(color)
         place_to_land = position + last_roll
-        fields_to_go = choosen_figure.fields_to_go
-        if choosen_figure.status == 0:
-            if choosen_figure.able_to_beat:
+        fields_to_go = chosen_figure.fields_to_go
+        if chosen_figure.status == 0:
+            if chosen_figure.able_to_beat:
                 self.get_figure_by_position_and_throw_out(start_field)
-                choosen_figure.move_figure_on_start_field(color)
+                chosen_figure.move_figure_on_start_field(color)
             else:
-                choosen_figure.move_figure_on_start_field(color)
+                chosen_figure.move_figure_on_start_field(color)
 
-        elif choosen_figure.status == 1:
+        elif chosen_figure.status == 1:
             if place_to_land > 71 and fields_to_go - last_roll >= 0:
-                if choosen_figure.able_to_beat:
+                if chosen_figure.able_to_beat:
                     self.get_figure_by_position_and_throw_out(place_to_land - 40)
                     self.set_old_position_black(position)
-                    choosen_figure.move_figure_around_the_map(last_roll)
+                    chosen_figure.move_figure_around_the_map(last_roll)
                 else:
-                    choosen_figure.move_figure_around_the_map(last_roll)
-            elif 0 < last_roll - choosen_figure.fields_to_go <= 4:
+                    chosen_figure.move_figure_around_the_map(last_roll)
+            elif 0 < last_roll - chosen_figure.fields_to_go <= 4:
                 self.set_old_position_black(position)
-                choosen_figure.move_figure_in_home(color, last_roll - fields_to_go)
+                chosen_figure.move_figure_in_home(color, last_roll - fields_to_go)
             else:
-                if choosen_figure.able_to_beat:
+                if chosen_figure.able_to_beat:
                     self.get_figure_by_position_and_throw_out(place_to_land)
                     self.set_old_position_black(position)
-                    choosen_figure.move_figure_forward_on_map(last_roll)
+                    chosen_figure.move_figure_forward_on_map(last_roll)
                 else:
                     self.set_old_position_black(position)
-                    choosen_figure.move_figure_forward_on_map(last_roll)
+                    chosen_figure.move_figure_forward_on_map(last_roll)
 
-        elif choosen_figure.status == 2:
+        elif chosen_figure.status == 2:
             self.set_old_position_black(position)
-            choosen_figure.move_figure_forward_in_home(last_roll)
+            chosen_figure.move_figure_forward_in_home(last_roll)
 
     def set_old_position_black(self, position):
         self.play_field[position] = 10
@@ -210,11 +212,13 @@ def get_end_pos_of_own_figure(player, position):
 def is_own_and_foreign_figure_on_field(own_status, foreign_status):
     if own_status == foreign_status and own_status == 1:
         return True
+    return None
 
 
 def is_own_figure_on_start_and_foreign_figure_on_field(own_status, foreign_status):
     if own_status == 0 and foreign_status == 1:
         return True
+    return None
 
 
 def is_figure_overstepping_field(figure_position, last_roll=0):
@@ -234,3 +238,4 @@ def is_foreign_figure_standing_on_end_pos_of_own_figure(foreign_figure_position,
 def has_player_rolled_a_six(last_roll):
     if last_roll == 6:
         return True
+    return None

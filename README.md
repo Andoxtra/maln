@@ -33,7 +33,8 @@ maln/
 │   └── reference/           Color codes and field coordinates
 ├── hardware/            Everything needed to build the physical board
 │   ├── 3d-print/            STL files for all printed parts (+ Tinkercad link)
-│   ├── schematics/          Controller wiring diagrams (PNG) + Fritzing sources (fritzing/)
+│   ├── BUILD.md             ★ Step-by-step build guide
+│   ├── schematics/          Board + controller wiring diagrams, Fritzing sources (fritzing/)
 │   ├── pcb/                 Circuit boards: Gerber files, schematics (PDF), 3D models (STEP), BOM
 │   └── SpielbrettInfoMADN.xlsx  Field / LED layout of the board
 └── deploy/
@@ -142,6 +143,8 @@ Then every player rolls once – the highest roll starts.
 ---
 
 ## Building the hardware
+
+**Step-by-step guide: [hardware/BUILD.md](hardware/BUILD.md)** (parts list, printing, PCBs, wiring, Pi setup).
 
 - **3D-printed parts:** [hardware/3d-print/](hardware/3d-print/). The file names say how many
   of each part to print and in which color, e.g. `72x Transparent - Light-Inner.stl`.

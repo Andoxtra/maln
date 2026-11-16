@@ -1,11 +1,11 @@
 import busio
 
-from .Input.Physical.PortExpander import PortExpander
-from .Input.Virtuell.Keyboard import Keyboard
-from .Output.Virtuell.Console import Console
-from .Output.Physical.Display import Display
+from Input.Physical.PortExpander import PortExpander
+from Input.Virtuell.Keyboard import Keyboard
+from Output.Virtuell.Console import Console
+from Output.Physical.Display import Display
 
-from .config.physicalAddressConfig import physical_address_config
+from config.physicalAddressConfig import physical_address_config
 
 
 def get_i2_c_bus_pins_by_color(color):
