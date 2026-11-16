@@ -27,6 +27,7 @@ maln/
 │   └── Physical/        LED board (Raspberry Pi)
 ├── docs/                Documentation
 │   ├── ARCHITECTURE.md      ★ How the code works – read this before changing code
+│   ├── IDEAS.md             Ideas for future improvements (ESP32 port, cheaper PCBs)
 │   ├── Spielanleitung.docx  Game rules (German)
 │   ├── Projektdokumentation.pdf  Full project documentation (German)
 │   ├── images/              Class diagram and flow chart
@@ -168,6 +169,11 @@ Then every player rolls once – the highest roll starts.
 
 Start with [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md). It explains the module structure,
 the threading model, the input/output abstraction and how the 144 board fields are numbered.
+
+## Ideas for future improvements
+
+Ideas to make the board cheaper and easier to rebuild (ESP32 instead of Raspberry Pi,
+cheaper PCB options) are collected in [docs/IDEAS.md](docs/IDEAS.md).
 
 ## License
 
