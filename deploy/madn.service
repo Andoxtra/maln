@@ -1,0 +1,13 @@
+[Unit]
+Description=MALN Game Service
+After=
+Wants=
+
+[Service]
+Restart=on-failure
+Type=simple
+ExecStart=/root/game/.venv/bin/python /root/game/main.py
+Environment=
+
+[Install]
+WantedBy=multi-user.target
