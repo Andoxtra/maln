@@ -17,6 +17,7 @@ class RunInThreads:
         elif self.gui_to_run == "Physical":
             from GUI.Physical.GuiPhysical import GuiPhysical
             return self.initialize_gui(GuiPhysical)
+        return None
 
     def initialize_gui(self, gui):
         return gui(self.game_object)

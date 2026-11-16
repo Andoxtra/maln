@@ -1,5 +1,5 @@
 from adafruit_mcp230xx.mcp23008 import MCP23008
-from .PhysicalButton import PhysicalButton
+from PhysicalButton import PhysicalButton
 
 
 class PortExpander:

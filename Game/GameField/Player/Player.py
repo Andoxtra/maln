@@ -1,11 +1,11 @@
 from helper import *
-from .Figure.Figure import Figure
-from .IO.Controller import Controller
-from .Dice.Dice import Dice
+from Figure.Figure import Figure
+from IO.Controller import Controller
+from Dice.Dice import Dice
 
-from .config.playerConfig import player_config
+from config.playerConfig import player_config
 
-from .Phelper.playerHelper import *
+from Phelper.playerHelper import *
 
 
 def get_last_field_by_color(color):

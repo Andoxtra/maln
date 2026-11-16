@@ -16,7 +16,9 @@ class PhysicalButton:
     def is_button_pressed(self):
         if not self.pin_to_read.value:
             return self.return_message
+        return None
 
     def is_button_released(self):
         if self.pin_to_read.value:
             return True
+        return None
